@@ -9,7 +9,7 @@ confinement: strict # use 'strict' once you have the right plugs
 
 apps:
   galileo:
-    command: python $SNAP/galileo.py
+    command: python $SNAP/bin/galileo.py
     plugs:
       - home
       - network

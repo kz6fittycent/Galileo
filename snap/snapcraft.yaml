@@ -9,7 +9,7 @@ confinement: strict # use 'strict' once you have the right plugs
 
 apps:
   galileo:
-    command: python $SNAP/bin/galileo.py
+    command: galileo.py
     plugs:
       - home
       - network
@@ -29,3 +29,10 @@ parts:
     stage-packages:
       - python
       - python-socks
+    
+  wrapper:
+    after: [galileo]
+    plugin: copy
+    files:
+      #parts/galileo/src/galileo: bin/galileo.py
+      galileo.py: bin/galileo.py

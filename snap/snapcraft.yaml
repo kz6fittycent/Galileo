@@ -24,8 +24,8 @@ parts:
     
     build-packages:
       - python
-      - python-pysocks
+      - python-socks
       
     stage-packages:
       - python
-      - python-pysocks
+      - python-socks

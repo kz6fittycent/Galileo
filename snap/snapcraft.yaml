@@ -1,5 +1,5 @@
 name: galileo # check to see if it's available
-version: '1.0+git' # this is freakin' awesome
+version: '1.0.1+git' # this is freakin' awesome
 summary: Galileo is an open source penetration testing tool for web applications # 79 char long summary
 description: |
   Galileo is an open source penetration testing tool for web applications, which helps developers and penetration testers identify and exploit vulnerabilities in their web applications.
@@ -21,6 +21,7 @@ parts:
     source-type: git
     plugin: python
     python-version: python2
+    requirements: requirements.txt
     
     build-packages:
       - python
@@ -29,10 +30,9 @@ parts:
     stage-packages:
       - python
       - python-socks
-    
-  wrapper:
-    after: [galileo]
+  
+  publish:  
     plugin: copy
     files:
       #parts/galileo/src/galileo: bin/galileo.py
-      galileo.py: bin/galileo.py
+      ./galileo.py: bin/galileo.py

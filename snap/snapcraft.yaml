@@ -5,11 +5,11 @@ description: |
   Galileo is an open source penetration testing tool for web applications, which helps developers and penetration testers identify and exploit vulnerabilities in their web applications.
   
 grade: stable # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs
+confinement: strict # use 'strict' once you have the right plugs
 
 apps:
   galileo:
-    command: galileo
+    command: python galileo.py
     plugs:
       - home
       - network
@@ -24,6 +24,8 @@ parts:
     
     build-packages:
       - python
+      - python-pysocks
       
     stage-packages:
       - python
+      - python-pysocks
